@@ -14,6 +14,8 @@ displayed to the screen."""
 # Import modules, declare CONSTANTS, set variables, build dictionaries and 
 # build classes
 
+from colorama import Fore, Back, Style
+
 # The class Pet is largely an information storage class that doesn't include
 # methods to do any evaluations.
 class Pet:
@@ -54,20 +56,17 @@ def main():
   
     my_pet = Pet(str(input("Enter your pet's name:\n")),
                  str(input("Enter your pet's type:\n")),
-                 int(input("Enter your pet's age:\n"))),        
-
-    # Display Pet Information
-
-    print(my_pet)
-
-    return
-
+                 int(input("Enter your pet's age:\n")))       
+    
+    return(my_pet)
 
    
-If __name__ == "__main__"
-    main()
+return_pet = main()
 
 # TERMINATE PROCESSING
+# Display results, display thank-you message, terminate processing
+
+print(return_pet)
 
 print('\n-----')
 print('Thank you for using PetMaster.')
