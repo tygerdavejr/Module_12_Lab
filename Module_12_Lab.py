@@ -14,10 +14,9 @@ displayed to the screen."""
 # Import modules, declare CONSTANTS, set variables, build dictionaries and 
 # build classes
 
-from colorama import Fore, Back, Style
+from colorama import Fore, Back, Style # This allows colorized text
 
-# The class Pet is largely an information storage class that doesn't include
-# methods to do any evaluations.
+# Build the Pet class and include accessor methods
 class Pet:
     """A pet with a name, type and age"""
 
@@ -46,28 +45,21 @@ class Pet:
                 f'Your pet age:  {self.pet_age}\n')
     
 
-
-
 # MAIN PROCESSING
-# Input information, call modules
 
 def main():
     # constructor pet of class Pet
   
-    my_pet = Pet(str(input("Enter your pet's name:\n")),
+    MyPet = Pet(str(input("Enter your pet's name:\n")),
                  str(input("Enter your pet's type:\n")),
                  int(input("Enter your pet's age:\n")))       
     
-    return(my_pet)
+    print(Fore.GREEN)  #Set Green as the text color for MyPet info
+    print(MyPet)
 
-   
-return_pet = main()
+    print(Fore.YELLOW + '-----')  # Set Yellow as the color for the closing banner
+    print('Thank you for using PetMaster.')
+    print('We hope to see you soon!' + Fore.WHITE)  # Set Text color back to White
 
-# TERMINATE PROCESSING
-# Display results, display thank-you message, terminate processing
-
-print(return_pet)
-
-print('\n-----')
-print('Thank you for using PetMaster.')
-print('We hope to see you soon!')
+if __name__ == '__main__':
+    main()
